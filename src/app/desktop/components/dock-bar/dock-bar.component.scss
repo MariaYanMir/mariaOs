@@ -1,0 +1,27 @@
+.dock-bar-container {
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
+  background-color: var(--color-white-transparent);
+  color: var(--color-text);
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 8px;
+  position: relative;
+
+  p.title {
+    color: var(--color-text);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .items-left-container,
+  .items-right-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}

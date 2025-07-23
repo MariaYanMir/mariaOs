@@ -1,0 +1,64 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the theme object.
+$mariaos-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes($mariaos-theme);
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($mariaos-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($mariaos-theme);
+@import "./variables";
+@import "./mixins";
+@import "./reset";
+
+:root {
+  --color-bg-gradient: 69deg, rgba(253, 231, 219, 1) 0%,
+    rgba(233, 235, 230, 1) 46.73%, rgba(214, 219, 210, 1) 70.09%,
+    rgba(179, 191, 174, 1) 93.46%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(var(--color-bg-gradient));
+  color: var(--color-text);
+}
+
+h1 {
+  font-family: var(--font-title);
+  color: var(--color-headings);
+}
+
+h2 {
+  color: var(--color-text);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

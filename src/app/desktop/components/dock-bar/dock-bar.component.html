@@ -1,0 +1,13 @@
+<div class="dock-bar-container">
+    <div class="items-left-container">
+        @for(item of items(); track item.id) {
+        <app-desktop-icon (itemSelected)="openWindow($event)" [item]="item"></app-desktop-icon>
+        }
+    </div>
+    <p class="title">María Os</p>
+    <div class="items-rignt-container">
+        <div class="hour">
+            {{time()}}
+        </div>
+    </div>
+</div>

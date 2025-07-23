@@ -1,0 +1,16 @@
+<div cdkDrag class="window" [style.top.px]="window()?.top" [style.left.px]="window()?.left"
+    [style.zIndex]="window()?.zIndex" [style.width]="window()?.width" [style.height]="window()?.height"
+    (click)="onFocus()" [class.is-minimized]="window()?.status === status.MIN"
+    [class.is-maximized]="window()?.status === status.MAX">
+    <div class="window__bar">
+        <div class="window__button-group">
+            <span class="window__button window__button--close" (click)="closeWindow()"></span>
+            <span class="window__button window__button--expand" (click)="expandWindow()"></span>
+            <span class="window__button window__button--minimize" (click)="minimizeWindow()"></span>
+        </div>
+        <span class="window__title">{{window()?.title}}</span>
+    </div>
+    <div class="window__content">
+        <ng-content></ng-content>
+    </div>
+</div>

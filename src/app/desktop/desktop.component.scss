@@ -1,0 +1,67 @@
+.desktop {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto auto; // icons / name + tagline / dock bar
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  position: relative;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+
+    span {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  .system-icons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+    align-items: end;
+    gap: 1.5rem 2.5rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .widget {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+  }
+
+  .presentation-container {
+    color: var(--color-headings);
+    font-size: 40px;
+
+    &__name {
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--color-meta);
+      width: fit-content;
+
+      span {
+        width: min-content;
+        display: inline-block;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 14px;
+        line-height: 1.3;
+        position: relative;
+        top: 2px;
+        letter-spacing: 1px;
+      }
+    }
+
+    &__tagline {
+      font-family: var(--font-title);
+      font-style: italic;
+    }
+  }
+}
