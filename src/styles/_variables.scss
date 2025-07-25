@@ -1,12 +1,9 @@
-
 :root {
   --color-bg: #fdfcf9;
-  --color-bg-gradient:  69deg,
-    rgba(253, 231, 219, 1) 0%,
-    rgba(233, 235, 230, 1) 46.73%,
-    rgba(214, 219, 210, 1) 70.09%,
-    rgba(179, 191, 174, 1) 93.46%
-  --color-text: #3b3028;
+  --color-bg-gradient: 69deg, rgba(253, 231, 219, 1) 0%,
+    rgba(233, 235, 230, 1) 46.73%, rgba(214, 219, 210, 1) 70.09%,
+    rgba(179, 191, 174, 1) 93.46%;
+  --color-text: #2c2826;
   --color-headings: #4a3f35;
   --color-meta: #7a6a5d;
   --color-white-soft: #fcfbf9;
@@ -14,13 +11,13 @@
 
   --color-accent: #c16c4c;
   --color-widget-bg: #fbf9f566;
-  --color-bg-dark: #D6DBD2;
+  --color-bg-dark: #d6dbd2;
 
   --color-button-system-expand: #7bb263;
   --color-button-system-minimize: #f7d370;
   --color-button-system-close: #bb4b23;
 
-  --font-title: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
+  --font-title: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  --font-terminal: "IBM Plex Mono", sans-serif;
 }
-
