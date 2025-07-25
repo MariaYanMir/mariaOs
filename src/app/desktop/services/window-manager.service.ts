@@ -7,6 +7,7 @@ import { DEFAULT_APP_INSTANCES } from '../../core/data/app-instances.config';
 })
 export class WindowManagerService {
   windows = signal<AppInstance[]>([]);
+  private readonly minimizedSet = new Set<string>();
 
   zIndexCounter = signal(100);
   windowOffset = signal(0);
@@ -17,8 +18,7 @@ export class WindowManagerService {
 
   dockBarOptions = computed(() => {
     return this.windows().filter(
-      (window) =>
-        window.inDockBar || (!window.inDockBar && window.status === Status.MIN)
+      (window) => window.inDockBar || this.minimizedSet.has(window.id)
     );
   });
 
@@ -106,6 +106,8 @@ export class WindowManagerService {
           : w
       )
     );
+
+    this.minimizedSet.delete(id);
   }
 
   expandWindow(id: string) {
@@ -143,6 +145,8 @@ export class WindowManagerService {
         };
       })
     );
+
+    this.minimizedSet.add(id);
   }
 
   onFocus(id: string) {
