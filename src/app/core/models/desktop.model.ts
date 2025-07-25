@@ -29,6 +29,7 @@ export interface AppInstance {
   // En qué zonas aparece
   inDockBar: boolean;
   isExternal: boolean;
+  isWidget: boolean;
 
   // Posición en el grid del escritorio (solo iconos)
   position?: {

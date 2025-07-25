@@ -8,6 +8,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: false,
     inDockBar: false,
     isExternal: false,
+    isWidget: false,
     status: Status.NORMAL,
     position: {
       gridColumn: 1,
@@ -21,6 +22,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: false,
     inDockBar: false,
     isExternal: false,
+    isWidget: false,
     status: Status.NORMAL,
     position: {
       gridColumn: 1,
@@ -34,6 +36,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: false,
     inDockBar: false,
     isExternal: false,
+    isWidget: false,
     status: Status.NORMAL,
     position: {
       gridColumn: 1,
@@ -47,6 +50,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: false,
     inDockBar: false,
     isExternal: false,
+    isWidget: false,
     status: Status.NORMAL,
     position: {
       gridColumn: 1,
@@ -60,6 +64,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: false,
     inDockBar: true,
     isExternal: false,
+    isWidget: false,
     status: Status.NORMAL,
   },
   {
@@ -70,6 +75,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     inDockBar: true,
     isExternal: false,
     status: Status.NORMAL,
+    isWidget: false,
     top: (window.innerHeight - 500) / 2,
     left: (window.innerWidth - 750) / 2,
     width: '500px',
@@ -82,6 +88,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: false,
     inDockBar: true,
     isExternal: false,
+    isWidget: false,
     status: Status.NORMAL,
   },
   {
@@ -91,6 +98,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: true,
     inDockBar: true,
     isExternal: false,
+    isWidget: false,
     status: Status.NORMAL,
   },
   {
@@ -102,6 +110,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isExternal: false,
     status: Status.NORMAL,
     top: 40,
+    isWidget: true,
     left: window.innerWidth - 360,
   },
   {
@@ -111,6 +120,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: true,
     inDockBar: true,
     isExternal: false,
+    isWidget: true,
     status: Status.NORMAL,
   },
   {
@@ -120,6 +130,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: false,
     inDockBar: false,
     isExternal: true,
+    isWidget: false,
     status: Status.NORMAL,
     position: {
       gridColumn: 2,
@@ -134,6 +145,7 @@ export const DEFAULT_APP_INSTANCES: AppInstance[] = [
     isOpen: false,
     inDockBar: false,
     isExternal: true,
+    isWidget: false,
     position: {
       gridColumn: 2,
       gridRow: 2,
