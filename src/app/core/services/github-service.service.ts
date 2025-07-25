@@ -1,7 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { inject, Injectable } from '@angular/core';
 import { Octokit } from '@octokit/rest';
+import { map, Observable } from 'rxjs';
+
+export interface GitHubRepo {
+  name: string;
+  url: string;
+  created: string;
+  language: string;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -11,14 +18,19 @@ export class GithubServiceService {
 
   http = inject(HttpClient);
 
-  octokit = new Octokit({
-    auth: 'YOUR-TOKEN',
-  });
-
   private readonly username = 'MariaYanMir';
   private readonly apiUrl = `https://api.github.com/users/${this.username}/repos`;
 
-  getPublicRepositoires() {
-    this.http.get(this.apiUrl).subscribe((repos) => console.log(repos));
+  getPublicRepositoires(): Observable<GitHubRepo[]> {
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map((repos) =>
+        repos.map((repo) => ({
+          name: repo.name,
+          url: repo.html_url,
+          created: repo.created_at,
+          language: repo.language,
+        }))
+      )
+    );
   }
 }
