@@ -1,0 +1,11 @@
+<div class="app-container dock-icon" (click)="emitSelectedItem()" (mouseenter)="isHovered = true"
+    [class.temporal]="!item()?.inDockBar" (mouseleave)="isHovered = false" [matTooltip]="item()?.title">
+
+    <span class="material-symbols-outlined icon">
+        {{ item()?.iconName }}
+    </span>
+
+    @if (item()?.isOpen || item()?.status === 'min') {
+    <div class="open-mark"></div>
+    }
+</div>

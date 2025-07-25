@@ -1,0 +1,54 @@
+.app-container {
+  align-items: center;
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+
+  &.dock-icon {
+    background-color: var(--color-bg-dark);
+    border-radius: 4px;
+    .material-symbols-outlined {
+      color: var(--color-text);
+      font-size: 32px;
+      font-variation-settings: "FILL" 0, "wght" 100, "GRAD" 0, "opsz" 24;
+    }
+  }
+
+  &.temporal {
+    background-color: transparent !important;
+  }
+}
+
+.icon {
+  color: var(--color-text);
+  display: block;
+  transition: color 300ms ease, font-variation-settings 300ms ease;
+
+  &:hover {
+    color: var(--color-headings);
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+  }
+}
+
+.title {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.material-symbols-outlined {
+  font-size: 52px;
+  font-variation-settings: "FILL" 0, "wght" 100, "GRAD" 0, "opsz" 24;
+}
+
+.open-mark {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: var(--color-accent);
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+}

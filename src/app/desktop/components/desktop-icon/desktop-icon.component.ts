@@ -1,18 +1,11 @@
-import {
-  Component,
-  EventEmitter,
-  input,
-  output,
-  OutputEmitterRef,
-} from '@angular/core';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { Component, input, output, OutputEmitterRef } from '@angular/core';
 import { CdkDrag } from '@angular/cdk/drag-drop';
 import { AppInstance } from '../../../core/models/desktop.model';
 
 @Component({
   selector: 'app-desktop-icon',
   standalone: true,
-  imports: [MatTooltipModule, CdkDrag],
+  imports: [CdkDrag],
   templateUrl: './desktop-icon.component.html',
   styleUrl: './desktop-icon.component.scss',
 })

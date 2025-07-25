@@ -1,0 +1,13 @@
+<div class="app-container" cdkDrag (dblclick)="emitSelectedItem()" (mouseenter)="isHovered = true"
+    (mouseleave)="isHovered = false">
+    @if (item()?.isExternal) {
+    <img class="icon" [src]="isHovered 
+                ? './../../../assets/' + item()?.iconName + '-hover.svg' 
+                : './../../../assets/' + item()?.iconName + '.svg'" [alt]="item()?.iconName" />
+    } @else {
+    <span class="material-symbols-outlined icon">
+        {{ item()?.iconName }}
+    </span>
+    }
+    <h2 class="title">{{ item()?.title }}</h2>
+</div>
