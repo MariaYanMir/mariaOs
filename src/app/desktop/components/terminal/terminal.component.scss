@@ -1,0 +1,11 @@
+.terminal {
+  padding: 1rem;
+
+  .typing {
+    display: inline-block;
+    white-space: pre-wrap;
+    font-size: 14px;
+    font-family: var(--font-terminal);
+    color: var(--color-text);
+  }
+}
