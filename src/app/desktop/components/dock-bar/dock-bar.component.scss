@@ -3,25 +3,45 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
   background-color: var(--color-white-transparent);
   color: var(--color-text);
-  display: flex;
   justify-content: space-between;
-  padding: 8px;
-  border-radius: 8px;
+  padding: 8px 16px 8px 12px;
+  border-radius: 12px;
   position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 
-  p.title {
+  .title {
     color: var(--color-text);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 50%;
-    transform: translate(-50%, -50%);
+    justify-self: center;
+  }
+
+  .divider {
+    background-color: var(--color-meta);
+    height: 30px;
+    width: 1px;
+    margin: 0 8px 0 16px;
   }
 
   .items-left-container,
   .items-right-container {
     display: flex;
-    align-items: center;
-    gap: 16px;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+
+  .items-left-container {
+    justify-self: start;
+  }
+
+  .items-right-container {
+    justify-self: end;
+
+    .hour {
+      color: var(--color-text);
+    }
   }
 }

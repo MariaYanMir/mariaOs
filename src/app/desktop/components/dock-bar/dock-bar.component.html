@@ -1,8 +1,16 @@
 <div class="dock-bar-container">
     <div class="items-left-container">
-        @for(item of items(); track item.id) {
-        <app-desktop-icon (itemSelected)="openWindow($event)" [item]="item"></app-desktop-icon>
-        }
+        <div>
+            @for(item of permanentItems(); track item.id) {
+            <app-dock-icon (itemSelected)="openWindow($event)" [item]="item"></app-dock-icon>
+            }
+        </div>
+        @if(temporaryItems()?.length) { <div class="divider"></div>}
+        <div>
+            @for(item of temporaryItems(); track item.id) {
+            <app-dock-icon (itemSelected)="openWindow($event)" [item]="item"></app-dock-icon>
+            }
+        </div>
     </div>
     <p class="title">María Os</p>
     <div class="items-rignt-container">

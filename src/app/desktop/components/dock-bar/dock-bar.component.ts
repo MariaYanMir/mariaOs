@@ -6,15 +6,15 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-import { DesktopIconComponent } from '../../../shared/components/desktop-icon/desktop-icon.component';
 import { interval, Subscription } from 'rxjs';
 import { WindowManagerService } from '../../services/window-manager.service';
 import { AppInstance } from '../../../core/models/desktop.model';
+import { DockIconComponent } from '../dock-icon/dock-icon.component';
 
 @Component({
   selector: 'app-dock-bar',
   standalone: true,
-  imports: [DesktopIconComponent],
+  imports: [DockIconComponent],
   templateUrl: './dock-bar.component.html',
   styleUrl: './dock-bar.component.scss',
 })
@@ -24,6 +24,14 @@ export class DockBarComponent implements OnInit {
 
   private now = signal(new Date());
   private subscription!: Subscription;
+
+  readonly permanentItems = computed(() =>
+    this.items()?.filter((i) => i.inDockBar)
+  );
+
+  readonly temporaryItems = computed(() =>
+    this.items()?.filter((i) => !i.inDockBar)
+  );
 
   time = computed(() => {
     const date = this.now();
